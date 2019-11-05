@@ -146,6 +146,7 @@ const createArticle = (title, date, par1, par2, par3) => {
   firstPar.textContent = par1;
   secondPar.textContent = par2;
   thirdPar.textContent = par3;
+  button.textContent = 'Expand';
 
   // Add Event Handler
   button.addEventListener('click', () => {
@@ -159,11 +160,5 @@ const createArticle = (title, date, par1, par2, par3) => {
 // Show Articles in Window
 const articles = document.querySelector('.articles');
 data.forEach(article => {
-  articles.appendChild(createArticle(
-    article.title,
-    article.date,
-    article.firstParagraph,
-    article.secondParagraph,
-    article.thirdParagraph
-  ));
+  articles.appendChild(createArticle(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph));
 });
