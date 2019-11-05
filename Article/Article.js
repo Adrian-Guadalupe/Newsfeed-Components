@@ -112,3 +112,31 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+const createArticle = (title, date, par1, par2, par3) => {
+  // Create Elements
+  const article = document.createElement('div');
+  const artTitle = document.createElement('h2');
+  const artDate = document.createElement('p');
+  const firstPar = document.createElement('p');
+  const secondPar = document.createElement('p');
+  const thirdPar = document.createElement('p');
+  const button = document.createElement('span');
+
+  // Nesting
+  article.appendChild(artTitle);
+  article.appendChild(artDate);
+  article.appendChild(firstPar);
+  article.appendChild(secondPar);
+  article.appendChild(thirdPar);
+  article.appendChild(button);
+
+  // Set Class Names
+  article.classList.add('article');
+  artDate.classList.add('date');
+  button.classList.add('expandButton');
+
+  // Return an Article Component
+  console.log('article component here');
+}
