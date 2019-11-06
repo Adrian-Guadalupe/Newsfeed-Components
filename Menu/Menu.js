@@ -39,33 +39,32 @@ const createMenu = (array) => {
   // Create Elements
   const menu = document.createElement('div');
   const list = document.createElement('ul');
-  const students = document.createElement('li');
-  const faculty = document.createElement('li');
-  const whatsNew = document.createElement('li');
-  const techTrends = document.createElement('li');
-  const music = document.createElement('li');
-  const logOut = document.createElement('li');
-
+  
   // Nesting
   menu.appendChild(list);
-  list.appendChild(students);
-  list.appendChild(faculty);
-  list.appendChild(whatsNew);
-  list.appendChild(techTrends);
-  list.appendChild(music);
-  list.appendChild(logOut);
-
+  
   // Set Class Names
   menu.classList.add('menu');
 
-  // Return a Menu Coponent
-  console.log('menu component here');
-
   // Add Content
-  menuItems.forEach((arrayItem) => {
-    const listItem = createMenu(arrayItem);
+  array.forEach((arrayItem) => {
+    const listItem = document.createElement('li');
+    listItem.textContent = arrayItem;
     list.appendChild(listItem);
+  });
+
+  // Create Button
+  menuButton = document.querySelector('.menu-button');
+  
+  menuButton.addEventListener('click', () => {
+    menu.classList.toggle('menu--open');
   });
 
   return menu;
 };
+
+header = document.querySelector('.header');
+header.appendChild(createMenu(menuItems));
+
+
+
