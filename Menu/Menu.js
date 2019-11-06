@@ -54,6 +54,18 @@ const createMenu = (array) => {
   list.appendChild(techTrends);
   list.appendChild(music);
   list.appendChild(logOut);
-  
-  
-}
+
+  // Set Class Names
+  menu.classList.add('menu');
+
+  // Return a Menu Coponent
+  console.log('menu component here');
+
+  // Add Content
+  menuItems.forEach((arrayItem) => {
+    const listItem = createMenu(arrayItem);
+    list.appendChild(listItem);
+  });
+
+  return menu;
+};
