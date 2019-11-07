@@ -48,12 +48,13 @@ const createMenu = (array) => {
 
   // Add Content
   array.forEach((arrayItem) => {
+    console.log(array);
     const listItem = document.createElement('li');
     listItem.textContent = arrayItem;
     list.appendChild(listItem);
   });
 
-  // Create Button
+  // Create Button Event-Listener
   menuButton = document.querySelector('.menu-button');
   
   menuButton.addEventListener('click', () => {
@@ -63,8 +64,8 @@ const createMenu = (array) => {
   return menu;
 };
 
-header = document.querySelector('.header');
-header.appendChild(createMenu(menuItems));
-
+  const header = document.querySelector('.header');
+  console.log(header);
+  header.appendChild(createMenu(menuItems));
 
 
